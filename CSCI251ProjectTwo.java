@@ -1,8 +1,7 @@
-/**
+/*
  * CSCI251ProjectTwo: Use MyStack and MyQueue to write a project that check if a sentence is palindrome
- * 
- * @author Hieng
- * @version CSCI 251 Project Two
+ * Hieng
+ * CSCI 251 Project Two
  */
 import java.util.Scanner;
 
@@ -26,12 +25,6 @@ public class CSCI251ProjectTwo
         
     }
     
-    /**
-     * isPalindrome returns true if the given String is a palindrome.
-     * Only letters are considered; case, spaces and punctuation are ignored.
-     * @param sentence the text to check
-     * @return true if sentence is a palindrome; false otherwise
-     */
     public static boolean isPalindrome(String sentence)
     {
         MyStack<Character> s = new MyStack<Character>();
@@ -42,12 +35,12 @@ public class CSCI251ProjectTwo
             if(Character.isLetter(c))
             {
                 c = Character.toUpperCase(c);
-                s.push(c); // stack gives the letters in reverse order
-                q.push(c); // queue gives the letters in original order
+                s.push(c); 
+                q.push(c); 
             }
         }
         while(!s.isEmpty()){
-            // compare with equals(): Character objects must not be compared with !=
+
             if(!q.peek().equals(s.peek()))
                 return false;
             s.pop();
